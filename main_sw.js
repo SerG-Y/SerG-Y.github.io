@@ -1,3 +1,5 @@
 self.addEventListener("install", async () => {
-    console.log("On install event")
+    console.log("man worker registred");
 });
+
+importScripts('notification_sw.js');

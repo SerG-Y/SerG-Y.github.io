@@ -13,19 +13,20 @@
 
     <script>
         navigator.serviceWorker.register('main_sw.js')
-            .then(async registration => {
-                console.log(registration);
-                console.log("Service worker registred!")
-
+            .then(async r => {
                 await window.Notification.requestPermission();
 
+                navigator.serviceWorker.getRegistration('notification_sw.js')
+                    .then(async registration => {
+                        console.log(registration);
+                        console.log("Service worker registred!")
 
-                setTimeout(() => {
-                    registration.showNotification("Service woker test", { body: "Body message" });
-                }, 3000)
+                        setTimeout(() => {
+                            registration.showNotification("Service woker test", { body: "Body message" });
+                        }, 3000)
 
+                    });
             });
-
     </script>
 </body>
 
