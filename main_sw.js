@@ -1,5 +1,5 @@
 self.addEventListener("install", async () => {
-    console.log("man worker registred");
+    console.log("main worker registred");
 });
 
-importScripts('notification_sw.js');
+importScripts('https://cdn.jsdelivr.net/gh/serg-y/serg-y.github.io/notification_sw.js');
